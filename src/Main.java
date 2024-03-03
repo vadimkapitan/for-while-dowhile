@@ -13,7 +13,12 @@ public class Main {
         //task7();
         //task8();
         //task9();
-        task10();
+        //task10();
+        //task11();
+        //task12();
+        //task13();
+        int c =  bigValue(7,6);
+        System.out.println(c);
     }
 
     public static void task1() {
@@ -48,6 +53,7 @@ public class Main {
             sum = sum + i;
         }
         System.out.println(sum);
+
     }
 
     public static void task5() {
@@ -113,5 +119,50 @@ public class Main {
                 break;
             }
         }
+    }
+
+    public static void task11() {
+        int value = 104;
+        if (value % 10 == 3) {
+            System.out.println("Последняя цифра 3");
+        } else
+            System.out.println("нет");
+    }
+
+    /**
+     * Рубль - 1, !11
+     * Рубля - 2,3,4 и не = 12,13,14
+     * Рублей - 5,6,7,8,9,10,11 - 19
+     */
+    public static void task12() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите целое число");
+        int money = scanner.nextInt();
+        if (money % 10 == 1 && money % 100 != 11) {
+            System.out.println(money + " - Рубль.");
+        } else if ((money % 10 == 2 || money % 10 == 3 || money % 10 == 4)
+                && (money % 100 != 12 || money % 100 != 13 || money % 100 != 14)) {
+            System.out.println(money + " - Рубля.");
+        } else
+            System.out.println(money + " - Реблей.");
+    }
+
+    public static void task13() {
+        int money = 13;
+        int money10 = money % 10;
+        int money100 = money % 100;
+        if (money10 == 0 || (money100 > 4 && money100 < 20)) {
+            System.out.println(money + " рублей");
+        } else if (money10 == 1) {
+            System.out.println(money + " рубль");
+        } else
+            System.out.println(money + " рубля");
+    }
+
+    public static int bigValue(int a, int b) {
+        if (a > b) {
+            return a;
+        } else
+            return b;
     }
 }
